@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS countries;
+DROP TABLE IF EXISTS genders;

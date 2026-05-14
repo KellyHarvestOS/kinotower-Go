@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kinotower | Главная</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flame: '#FF4D1C',
+            coral: '#FF2E55',
+            cream: '#FFF7F0',
+            ink: '#171717'
+          },
+          boxShadow: {
+            glow: '0 24px 80px rgba(255, 77, 28, .22)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#fffaf6] text-ink antialiased">
+  <div class="min-h-screen overflow-hidden">
+    <header class="sticky top-0 z-30 border-b border-orange-100/80 bg-white/80 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+        <a href="/kinotower" class="flex items-center gap-3">
+          <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-coral to-flame font-black text-white shadow-glow">K</span>
+          <span>
+            <span class="block text-xl font-black tracking-tight">Kinotower</span>
+            <span class="block text-xs font-semibold uppercase tracking-[.22em] text-orange-500">Cinema platform</span>
+          </span>
+        </a>
+        <nav class="hidden items-center gap-8 text-sm font-bold text-neutral-600 md:flex">
+          <a class="transition hover:text-flame" href="#new">Новинки</a>
+          <a class="transition hover:text-flame" href="#popular">Популярное</a>
+          <a class="transition hover:text-flame" href="#genres">Жанры</a>
+          <a class="transition hover:text-flame" href="/">API</a>
+        </nav>
+        <a href="#new" class="rounded-full bg-ink px-5 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-flame">Смотреть</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative">
+        <div class="absolute -right-40 top-10 h-96 w-96 rounded-full bg-orange-300/40 blur-3xl"></div>
+        <div class="absolute -left-28 bottom-0 h-80 w-80 rounded-full bg-red-300/30 blur-3xl"></div>
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[1.08fr_.92fr] lg:px-8 lg:py-24">
+          <div class="relative z-10">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-4 py-2 text-sm font-bold text-flame shadow-sm">
+              <span class="h-2 w-2 rounded-full bg-flame"></span>
+              Премьеры, рейтинги и подборки фильмов
+            </div>
+            <h1 class="max-w-3xl text-5xl font-black leading-[.92] tracking-[-.06em] text-ink sm:text-7xl lg:text-8xl">
+              Кино, которое хочется открыть сегодня.
+            </h1>
+            <p class="mt-7 max-w-2xl text-lg leading-8 text-neutral-600">
+              Главная страница Kinotower в светлом premium-стиле: новинки, горячие релизы, жанры и быстрый доступ к каталогу фильмов.
+            </p>
+            <div class="mt-9 flex flex-wrap gap-3">
+              <a href="#new" class="rounded-full bg-gradient-to-r from-coral to-flame px-7 py-4 font-black text-white shadow-glow transition hover:-translate-y-1">Открыть новинки</a>
+              <a href="/api/v1/films" class="rounded-full border border-orange-200 bg-white px-7 py-4 font-black text-ink transition hover:-translate-y-1 hover:border-flame hover:text-flame">Каталог API</a>
+            </div>
+          </div>
+
+          <div class="relative z-10">
+            <div class="rounded-[2.5rem] border border-orange-100 bg-white p-4 shadow-glow">
+              <div class="relative min-h-[520px] overflow-hidden rounded-[2rem] bg-gradient-to-br from-orange-50 via-white to-red-50 p-6">
+                <div class="absolute right-8 top-8 rounded-full bg-white/80 px-4 py-2 text-sm font-black text-flame shadow">Новинка недели</div>
+                <div class="absolute bottom-6 left-6 right-6 rounded-[1.7rem] bg-white/88 p-6 shadow-xl backdrop-blur">
+                  <p class="text-sm font-black uppercase tracking-[.24em] text-flame">Featured release</p>
+                  <h2 class="mt-2 text-4xl font-black tracking-tight">Blade Runner 2049</h2>
+                  <p class="mt-3 text-neutral-600">Неоновая фантастика, визуальный масштаб и атмосфера будущего.</p>
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">Фантастика</span>
+                    <span class="rounded-full bg-red-100 px-3 py-1 text-sm font-bold text-red-700">18+</span>
+                    <span class="rounded-full bg-neutral-100 px-3 py-1 text-sm font-bold text-neutral-700">★ 5.0</span>
+                  </div>
+                </div>
+                <div class="absolute left-10 top-16 h-64 w-44 rotate-[-10deg] rounded-[1.5rem] bg-gradient-to-br from-coral to-orange-400 shadow-2xl"></div>
+                <div class="absolute right-16 top-28 h-72 w-48 rotate-[9deg] rounded-[1.5rem] bg-gradient-to-br from-ink to-neutral-700 shadow-2xl"></div>
+                <div class="absolute left-36 top-40 h-80 w-52 rounded-[1.5rem] bg-gradient-to-br from-orange-200 to-white shadow-2xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="new" class="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p class="font-black uppercase tracking-[.24em] text-flame">New releases</p>
+            <h2 class="mt-2 text-4xl font-black tracking-tight sm:text-5xl">Новинки Kinotower</h2>
+          </div>
+          <a href="/api/v1/films" class="font-black text-flame transition hover:text-coral">Смотреть все фильмы</a>
+        </div>
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <article class="group rounded-[2rem] border border-orange-100 bg-white p-4 shadow-sm transition hover:-translate-y-2 hover:shadow-glow">
+            <div class="h-72 rounded-[1.5rem] bg-gradient-to-br from-orange-200 via-flame to-coral"></div>
+            <div class="p-4">
+              <p class="text-sm font-black text-flame">Премьера</p>
+              <h3 class="mt-1 text-2xl font-black">Black Mirror</h3>
+              <p class="mt-2 text-neutral-600">Антология о технологиях, страхах и будущем человека.</p>
+            </div>
+          </article>
+          <article class="group rounded-[2rem] border border-orange-100 bg-white p-4 shadow-sm transition hover:-translate-y-2 hover:shadow-glow">
+            <div class="h-72 rounded-[1.5rem] bg-gradient-to-br from-neutral-900 via-neutral-700 to-flame"></div>
+            <div class="p-4">
+              <p class="text-sm font-black text-flame">Выбор редакции</p>
+              <h3 class="mt-1 text-2xl font-black">Blade Runner 2049</h3>
+              <p class="mt-2 text-neutral-600">Киберпанк, неон и большой кинематографический масштаб.</p>
+            </div>
+          </article>
+          <article class="group rounded-[2rem] border border-orange-100 bg-white p-4 shadow-sm transition hover:-translate-y-2 hover:shadow-glow">
+            <div class="h-72 rounded-[1.5rem] bg-gradient-to-br from-red-100 via-orange-200 to-white"></div>
+            <div class="p-4">
+              <p class="text-sm font-black text-flame">Топ рейтинга</p>
+              <h3 class="mt-1 text-2xl font-black">Parasite</h3>
+              <p class="mt-2 text-neutral-600">Социальная драма с напряжением и идеальной режиссурой.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="popular" class="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+        <div class="rounded-[2.5rem] bg-ink p-6 text-white shadow-glow lg:p-10">
+          <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+            <div>
+              <p class="font-black uppercase tracking-[.24em] text-orange-300">Trending</p>
+              <h2 class="mt-3 text-4xl font-black tracking-tight">Популярное сейчас</h2>
+              <p class="mt-4 text-neutral-300">Блок для будущих динамических подборок: популярные фильмы, лучшие рейтинги, новые отзывы и рекомендации.</p>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-3">
+              <div class="rounded-3xl bg-white/10 p-5 backdrop-blur"><p class="text-sm text-neutral-300">Рейтинги</p><strong class="mt-2 block text-3xl">★ 4.8</strong></div>
+              <div class="rounded-3xl bg-white/10 p-5 backdrop-blur"><p class="text-sm text-neutral-300">Отзывы</p><strong class="mt-2 block text-3xl">120+</strong></div>
+              <div class="rounded-3xl bg-white/10 p-5 backdrop-blur"><p class="text-sm text-neutral-300">Жанры</p><strong class="mt-2 block text-3xl">15</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="genres" class="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+        <p class="font-black uppercase tracking-[.24em] text-flame">Genres</p>
+        <h2 class="mt-2 text-4xl font-black tracking-tight">Подборки по настроению</h2>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="rounded-full bg-white px-5 py-3 font-black text-orange-700 shadow-sm ring-1 ring-orange-100">Фантастика</span>
+          <span class="rounded-full bg-white px-5 py-3 font-black text-orange-700 shadow-sm ring-1 ring-orange-100">Драма</span>
+          <span class="rounded-full bg-white px-5 py-3 font-black text-orange-700 shadow-sm ring-1 ring-orange-100">Триллер</span>
+          <span class="rounded-full bg-white px-5 py-3 font-black text-orange-700 shadow-sm ring-1 ring-orange-100">Киберпанк</span>
+          <span class="rounded-full bg-white px-5 py-3 font-black text-orange-700 shadow-sm ring-1 ring-orange-100">Детектив</span>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
